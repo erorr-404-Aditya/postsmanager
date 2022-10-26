@@ -15,14 +15,6 @@ export default function Home() {
   const successref = React.useRef(null);
   const { AllPostsData, setAllPostsData } = alldat;
   const [insidepagenav, setinsidepagenav] = useState(2);
-  useEffect(() => {
-    (async () => {
-      var axres = await axios
-        .get("https://jsonplaceholder.typicode.com/posts")
-        .then((dat) => dat.data);
-      setAllPostsData(axres);
-    })();
-  }, []);
 
   return (
     <>

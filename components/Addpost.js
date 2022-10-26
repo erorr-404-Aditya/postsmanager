@@ -21,7 +21,7 @@ const Addpost = ({ setinsidepagenav }) => {
               .then((dat) => dat.data);
             successref.current.innerText =
               "Success Data - " + JSON.stringify(nowdat);
-            setAllPostsData((d) => [...d, nowdat]);
+            setAllPostsData((d) => [nowdat, ...d]);
             setinsidepagenav(1);
 
             successref.current.style.opacity = 1;

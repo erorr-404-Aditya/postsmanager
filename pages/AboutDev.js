@@ -16,12 +16,10 @@ export default function Home() {
   const [insidepagenav, setinsidepagenav] = useState(1);
   useEffect(() => {
     (async () => {
-      if (!AllPostsData[0]) {
-        var axres = await axios
-          .get("https://jsonplaceholder.typicode.com/posts")
-          .then((dat) => dat.data);
-        setAllPostsData(axres);
-      }
+      var axres = await axios
+        .get("https://jsonplaceholder.typicode.com/posts")
+        .then((dat) => dat.data);
+      setAllPostsData(axres);
     })();
   }, []);
 
@@ -43,7 +41,7 @@ export default function Home() {
             className=" rounded-t-2xl  h-[37.575rem] overflow-hidden w-[75vw] mt-[7rem] bg-slate-800"
           >
             <div className="pl-[50%] bg-blue-800 text-3xl p-4  text-slate-300 flex justify-between  items-center">
-              <h3 className="-translate-x-[50%]">{`All Posts`}</h3>
+              <h3 className="-translate-x-[50%]">{`About Dev`}</h3>
               <div className="group relative p-[7px]">
                 <img className="" src="/dots-y.svg" alt="" />
                 <div className=" top-0 right-0 w-[9rem] rounded-lg group-hover:flex hidden absolute z-[1] text-xs font-medium bg-slate-800 flex-col">
@@ -72,7 +70,7 @@ export default function Home() {
                       insidepagenav == 3 ? "bg-slate-500 text-slate-800" : ""
                     } hover:bg-slate-300 hover:text-slate-800`}
                     onClick={() => {
-                      router.push("/AboutDev");
+                      router.push("AboutDev");
                     }}
                   >
                     About Dev
@@ -80,15 +78,12 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            {insidepagenav == 1 ? (
-              <Allposts AllPostsData={AllPostsData} />
-            ) : insidepagenav == 2 ? (
-              <Addpost setinsidepagenav={setinsidepagenav} />
-            ) : insidepagenav == 3 ? (
-              <AboutDev />
-            ) : (
-              ""
-            )}
+            <h2 id="slidertext">
+              Aditya Kumar
+              <span>Aditya Kumar </span>
+              <span>Aditya Kumar </span>
+              <span>Web & App Developer</span>
+            </h2>
           </div>
         </div>
       </div>

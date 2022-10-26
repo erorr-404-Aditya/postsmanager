@@ -13,7 +13,7 @@ export default function Home() {
   var router = useRouter();
   var alldat = useContext(AllPostsManager);
   const { AllPostsData, setAllPostsData } = alldat;
-  const [insidepagenav, setinsidepagenav] = useState(1);
+  const [insidepagenav, setinsidepagenav] = useState(3);
   useEffect(() => {
     (async () => {
       var axres = await axios

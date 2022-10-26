@@ -14,7 +14,7 @@ export default function Home() {
   var alldat = React.useContext(AllPostsManager);
   const successref = React.useRef(null);
   const { AllPostsData, setAllPostsData } = alldat;
-  const [insidepagenav, setinsidepagenav] = useState(1);
+  const [insidepagenav, setinsidepagenav] = useState(2);
   useEffect(() => {
     (async () => {
       var axres = await axios

@@ -1,7 +1,10 @@
 import React from "react";
 import axios from "axios";
+import { AllPostsManager } from "../context/allcontexts";
 
 const Addpost = () => {
+  var alldat = React.useContext(AllPostsManager);
+  const { AllPostsData, setAllPostsData } = alldat;
   const successref = React.useRef(null);
   return (
     <>
@@ -18,6 +21,7 @@ const Addpost = () => {
               .then((dat) => dat.data);
             successref.current.innerText =
               "Success Data - " + JSON.stringify(nowdat);
+            setAllPostsData((d) => [...d, nowdat]);
             successref.current.style.opacity = 1;
           }}
         >

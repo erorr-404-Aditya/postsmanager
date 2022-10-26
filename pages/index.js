@@ -87,7 +87,7 @@ export default function Home() {
             {insidepagenav == 1 ? (
               <Allposts AllPostsData={AllPostsData} />
             ) : insidepagenav == 2 ? (
-              <Addpost />
+              <Addpost setinsidepagenav={setinsidepagenav} />
             ) : insidepagenav == 3 ? (
               <AboutDev />
             ) : (

@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { AllPostsManager } from "../context/allcontexts";
 
-const Addpost = () => {
+const Addpost = ({ setinsidepagenav }) => {
   var alldat = React.useContext(AllPostsManager);
   const { AllPostsData, setAllPostsData } = alldat;
   const successref = React.useRef(null);
@@ -22,6 +22,8 @@ const Addpost = () => {
             successref.current.innerText =
               "Success Data - " + JSON.stringify(nowdat);
             setAllPostsData((d) => [...d, nowdat]);
+            setinsidepagenav(1);
+
             successref.current.style.opacity = 1;
           }}
         >

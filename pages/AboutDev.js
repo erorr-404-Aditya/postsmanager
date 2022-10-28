@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.css";
 import axios from "axios";
 import { useState, useEffect, useRef, useMemo, useContext } from "react";
 import { AllPostsManager } from "../context/allcontexts";
-import Allposts from "../components/allposts";
+import Allposts from "../components/Allposts";
 import AboutDev from "../components/AboutDev";
 import Addpost from "../components/Addpost";
 import { useRouter } from "next/router";
